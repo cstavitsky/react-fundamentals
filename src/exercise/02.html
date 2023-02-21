@@ -19,9 +19,11 @@
     // const elementProps = {className: 'container', children: 'Hello World'}
     // const elementType = 'div'
     // const reactElement = React.createElement(elementType, elementProps)
+    const hello = React.createElement('span', {children: 'Hello'})
+    const world = React.createElement('span', {children: 'World'})
     const reactElement = React.createElement('div', {
       className: 'container',
-      children: 'Hello World',
+      children: [hello, world],
     })
     const root = ReactDOM.createRoot(rootElement)
     root.render(reactElement)
