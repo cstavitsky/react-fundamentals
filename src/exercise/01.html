@@ -7,11 +7,16 @@
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
 <!--   📜 https://github.com/mdn/js-examples/tree/master/module-examples -->
 
-<body>
-  <div id="root"></div>
-</body>
+<body></body>
 
 <script type="module">
+  // Create root node
+  const body = document.body
+  const root = document.createElement('div')
+  root.id = 'root'
+  body.append(root)
+
+  // Create div and append to root node
   const div = document.createElement('div')
   div.textContent = 'Hello World'
   div.className = 'container'
