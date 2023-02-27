@@ -8,7 +8,9 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
   <script type="text/babel">
-    const el = <div className="container">Hello World</div>
+    const className = 'container'
+    const children = 'Hello World'
+    const el = <div className={className}>{children}</div>
     ReactDOM.createRoot(document.getElementById('root')).render(el)
   </script>
 </body>
