@@ -4,11 +4,6 @@
 <body>
   <div id="root"></div>
 
-  <!-- 🐨 add React and ReactDOM on the page.
-       💰 Here are script tags that'll do the job:
-  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
-  -->
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
 
@@ -21,10 +16,13 @@
     // const reactElement = React.createElement(elementType, elementProps)
     const hello = React.createElement('span', {children: 'Hello'})
     const world = React.createElement('span', {children: 'World'})
-    const reactElement = React.createElement('div', {
-      className: 'container',
-      children: [hello, world],
-    })
+    const reactElement = React.createElement(
+      'div',
+      {className: 'container'},
+      hello,
+      ' ',
+      world,
+    )
     const root = ReactDOM.createRoot(rootElement)
     root.render(reactElement)
   </script>
