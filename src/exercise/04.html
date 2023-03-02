@@ -6,17 +6,28 @@
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+
   <script type="text/babel">
     // this is now a custom component -- any changes to it can be made and
     // will be reflected
-    const Message = ({children}) => {
-      return <div className="message">{children}</div>
+    const Message = ({greeting, subject}) => {
+      return (
+        <div className="message">
+          {greeting}, {subject}
+        </div>
+      )
+    }
+
+    Message.propTypes = {
+      greeting: PropTypes.string,
+      subject: PropTypes.string,
     }
 
     const element = (
       <div className="container">
-        {<Message>Hello World</Message>}
-        {<Message>Goodbye World</Message>}
+        {<Message greeting="Hello" subject="World" />}
+        {<Message greeting="Goodbye" subject="World" />}
       </div>
     )
 
