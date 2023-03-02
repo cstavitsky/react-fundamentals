@@ -7,15 +7,16 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
+    // this is now a custom component -- any changes to it can be made and
+    // will be reflected
     const Message = ({children}) => {
       return <div className="message">{children}</div>
     }
 
-    // the below 2 things are the same!
     const element = (
       <div className="container">
         {<Message>Hello World</Message>}
-        {React.createElement(Message, {children: 'Goodbye World'})}
+        {<Message>Goodbye World</Message>}
       </div>
     )
 
