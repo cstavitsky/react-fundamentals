@@ -25,10 +25,10 @@
     }
 
     const element = (
-      <div className="container">
-        {<Message greeting="Hello" />}
-        {<Message greeting="Goodbye" subject="World" />}
-      </div>
+      <>
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
+      </>
     )
 
     ReactDOM.createRoot(document.getElementById('root')).render(element)
