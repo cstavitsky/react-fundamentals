@@ -20,13 +20,13 @@
     }
 
     Message.propTypes = {
-      greeting: PropTypes.string,
-      subject: PropTypes.string,
+      greeting: PropTypes.string.isRequired,
+      subject: PropTypes.string.isRequired,
     }
 
     const element = (
       <div className="container">
-        {<Message greeting="Hello" subject="World" />}
+        {<Message greeting="Hello" />}
         {<Message greeting="Goodbye" subject="World" />}
       </div>
     )
