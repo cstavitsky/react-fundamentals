@@ -15,50 +15,40 @@ import '../box-styles.css'
 // 💰 Here are available style attributes: backgroundColor, fontStyle
 
 const smallBox = (
-  <div
+  <Box
     className="box box--small"
     style={{backgroundColor: 'lightblue', fontStyle: 'italic'}}
   >
     small lightblue box
-  </div>
+  </Box>
 )
 const mediumBox = (
-  <div
-    className="box box--medium"
-    style={{backgroundColor: 'pink', fontStyle: 'italic'}}
-  >
+  <Box className="box--medium" style={{backgroundColor: 'pink'}}>
     medium pink box
-  </div>
+  </Box>
 )
 const largeBox = (
-  <div
-    className="box box--large"
-    style={{backgroundColor: 'orange', fontStyle: 'italic'}}
-  >
+  <Box className="box--large" style={{backgroundColor: 'orange'}}>
     large orange box
-  </div>
+  </Box>
 )
 
-function Box({className, style, children}) {
+function Box({className = '', ...otherProps}) {
   return (
-    <div className={`box ${className}`} style={{fontStyle: 'italic', ...style}}>
-      {children}
-    </div>
+    <div
+      className={`box ${className}`}
+      style={{fontStyle: 'italic'}}
+      {...otherProps}
+    />
   )
 }
 
 function App() {
   return (
     <div>
-      <Box className="box--small" style={{backgroundColor: 'lightblue'}}>
-        small lightblue box
-      </Box>
-      <Box className="box--medium" style={{backgroundColor: 'pink'}}>
-        medium pink box
-      </Box>
-      <Box className="box--large" style={{backgroundColor: 'orange'}}>
-        large orange box
-      </Box>
+      {smallBox}
+      {mediumBox}
+      {largeBox}
     </div>
   )
 }
