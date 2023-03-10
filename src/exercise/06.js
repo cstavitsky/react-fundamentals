@@ -17,7 +17,6 @@ function UsernameForm({onSubmitUsername}) {
     const inputVal = e.target.value
     const isValid = inputVal === inputVal.toLowerCase()
     setError(isValid ? null : `Username must be lowercase`)
-    document.getElementById('submit').disabled = !isValid
   }
 
   return (
@@ -31,10 +30,10 @@ function UsernameForm({onSubmitUsername}) {
           type="text"
         />
       </div>
-      <button id="submit" type="submit">
+      <button id="submit" type="submit" disabled={Boolean(error)}>
         Submit
       </button>
-      <div>{error}</div>
+      <div style={{color: 'red'}}>{error}</div>
     </form>
   )
 }
